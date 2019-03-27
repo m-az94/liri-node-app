@@ -13,6 +13,9 @@ var fs = require("fs");
 
 function concertThis(){
     //console.log("You selected concert-this");
+    if (value === undefined){
+        value= "muse";
+    }
     axios.get("https://rest.bandsintown.com/artists/" + value + "/events?app_id=codingbootcamp").then(
         function(response){
             console.log(value +" will be playing at...")
@@ -131,6 +134,10 @@ function doWhatItSays(){
 
 var action = process.argv[2];
 var value = process.argv[3];
+
+for (var i=4; i<process.argv.length; i++){
+    value=value+"+"+process.argv[i];
+}
 
 switch (action){
     case "concert-this":
