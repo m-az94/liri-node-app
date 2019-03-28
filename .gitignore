@@ -61,5 +61,5 @@ typings/
 .next
 
 node_modules
-.DS_Stores
+.DS_Store
 .env
